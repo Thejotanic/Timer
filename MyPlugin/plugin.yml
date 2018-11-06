@@ -1,0 +1,10 @@
+name: MyPlugin
+version: 1.0
+main: de.thejotanic.myPlugin.main.Main
+api-version: 1.13
+
+commands:
+   countdown:
+      description: Startet einen Countdown!
+   chatcountdown:
+      description: Startet einen ChatCountdown!
