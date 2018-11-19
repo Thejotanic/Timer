@@ -4,11 +4,12 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class JoinListener implements Listener {
+public class JoinQuitListener implements Listener {
 	
 	@EventHandler
 	public void onPlayerJoin(PlayerJoinEvent e) {
@@ -24,6 +25,12 @@ public class JoinListener implements Listener {
 			p.sendMessage("§6Willkommen auf dem Server §a" + p.getName() + " §6:)");
 		}
 		
+	}
+
+	@EventHandler
+	public void onPlayerQuit(PlayerQuitEvent e) {
+		Player p = e.getPlayer();
+		e.setQuitMessage("§8[§c-§8] " + getTitle(p) + p.getName());
 	}
 
 	private String getTitle(Player p) {

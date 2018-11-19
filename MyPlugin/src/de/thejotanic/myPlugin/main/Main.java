@@ -7,8 +7,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import de.thejotanic.myPlugin.countdown.Scheduler;
 import de.thejotanic.myPlugin.countdown.SchedulerChat;
 import de.thejotanic.myPlugin.listener.GameModeChangeListener;
-import de.thejotanic.myPlugin.listener.JoinListener;
-import de.thejotanic.myPlugin.listener.QuitListener;
+import de.thejotanic.myPlugin.listener.JoinQuitListener;
 
 public class Main extends JavaPlugin {
 	
@@ -21,8 +20,7 @@ public class Main extends JavaPlugin {
 		getCommand("chatcountdown").setExecutor(new SchedulerChat());
 		
 		PluginManager pm = Bukkit.getPluginManager();
-		pm.registerEvents(new JoinListener(), this);
-		pm.registerEvents(new QuitListener(), this);
+		pm.registerEvents(new JoinQuitListener(), this);
 		pm.registerEvents(new GameModeChangeListener(), this);
 	}
 
