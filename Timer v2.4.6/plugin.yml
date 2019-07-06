@@ -1,0 +1,8 @@
+name: Timer
+version: 2.4.6
+main: de.thejotanic.timer.main.Main
+api-version: 1.14
+
+commands:
+   countdown:
+      description: Startet einen Countdown!
